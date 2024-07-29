@@ -1,41 +1,47 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "katabasis",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Katabasis",
+	"description": "A general overhaul of Minecraft mechanics!",
 	"authors": [
-		"Me!"
+		"Mercury",
+		"Toad",
+		"Avery",
+		"Zarkanaseen",
+		"YBOUZL"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://starfall.io",
+		"issues": "https://github.com/StarfallMods/Katabasis/issues",
+		"sources": "https://github.com/StarfallMods/Katabasis"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"icon": "assets/katabasis/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"io.starfall.katabasis.Katabasis"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"io.starfall.katabasis.KatabasisClient"
+		],
+		"cardinal-components": [
+			"io.starfall.katabasis.registry.KatabasisComponents"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
-		{
-			"config": "modid.client.mixins.json",
-			"environment": "client"
-		}
+		"katabasis.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.10",
-		"minecraft": "~1.20.6",
-		"java": ">=21",
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.4",
+		"java": ">=19",
 		"fabric-api": "*"
 	},
-	"suggests": {
-		"another-mod": "*"
+	"custom": {
+		"cardinal-components": [
+			"katabasis:soul"
+		]
 	}
 }

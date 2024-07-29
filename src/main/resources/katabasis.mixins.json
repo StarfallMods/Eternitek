@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "io.starfall.katabasis.mixin",
+  "compatibilityLevel": "JAVA_19",
+  "mixins": [
+    "InventoryMixin",
+    "StatusEffectMixin",
+    "LivingEntityMixin"
+  ],
+  "client": [
+    "ItemRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
