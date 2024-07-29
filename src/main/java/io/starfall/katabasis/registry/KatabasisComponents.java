@@ -11,8 +11,6 @@ import net.minecraft.entity.player.PlayerEntity;
 
 public class KatabasisComponents implements EntityComponentInitializer {
 
-	// TO-DO: Fix this once CCA is installed
-
 	public static final ComponentKey<IntegerComponent> SOUL = ComponentRegistry.getOrCreate(
 		Katabasis.id("soul"),
 		IntegerComponent.class

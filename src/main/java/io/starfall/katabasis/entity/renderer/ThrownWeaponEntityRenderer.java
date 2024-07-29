@@ -23,8 +23,6 @@ import org.joml.Quaternionf;
 @Environment(EnvType.CLIENT)
 public class ThrownWeaponEntityRenderer extends EntityRenderer<ThrownWeaponEntity> {
 
-	// TO-DO: Fix this class once client issue is resolved
-
 	private final HeldItemRenderer heldItemRenderer;
 
 	public ThrownWeaponEntityRenderer(EntityRendererFactory.Context ctx) {
