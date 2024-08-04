@@ -2,6 +2,7 @@ package io.starfall.katabasis.components;
 
 import dev.onyxstudios.cca.api.v3.component.sync.AutoSyncedComponent;
 import io.starfall.katabasis.registry.KatabasisComponents;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.MathHelper;
@@ -9,9 +10,9 @@ import net.minecraft.util.math.MathHelper;
 public class SoulComponent implements IntegerComponent, AutoSyncedComponent {
 
 	private int soul = 0;
-	private final PlayerEntity provider;
+	private final LivingEntity provider;
 
-	public SoulComponent(PlayerEntity provider) {
+	public SoulComponent(LivingEntity provider) {
 		this.provider = provider;
 	}
 

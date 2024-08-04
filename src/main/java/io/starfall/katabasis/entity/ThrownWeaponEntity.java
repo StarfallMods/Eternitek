@@ -13,17 +13,17 @@ public abstract class ThrownWeaponEntity extends PersistentProjectileEntity {
 	protected ItemStack stack;
 
 	protected ThrownWeaponEntity(EntityType<? extends PersistentProjectileEntity> entityType, World world, ItemStack stack) {
-		super(entityType, world, stack);
+		super(entityType, world);
 		this.stack = stack;
 	}
 
 	protected ThrownWeaponEntity(EntityType<? extends PersistentProjectileEntity> entityType, double d, double e, double f, World world, ItemStack stack) {
-		super(entityType, d, e, f, world, stack);
+		super(entityType, d, e, f, world);
 		this.stack = stack;
 	}
 
 	protected ThrownWeaponEntity(EntityType<? extends PersistentProjectileEntity> entityType, LivingEntity livingEntity, World world, ItemStack stack) {
-		super(entityType, livingEntity, world, stack);
+		super(entityType, livingEntity, world);
 		this.stack = stack;
 	}
 

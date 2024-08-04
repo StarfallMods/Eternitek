@@ -8,9 +8,9 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.Identifier;
 
-public class ScytheItem extends SwordItem implements SeparatePerspective, Disciplined {
+public class ScytheItem extends BaseRogueItem implements SeparatePerspective {
 
-	private Identifier heldModel;
+	private final Identifier heldModel;
 
 	public ScytheItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, String heldModel) {
 		super(toolMaterial, attackDamage, attackSpeed, new FabricItemSettings());
@@ -20,11 +20,6 @@ public class ScytheItem extends SwordItem implements SeparatePerspective, Discip
 	@Override
 	public Identifier getHeldModelIdentifier() {
 		return heldModel;
-	}
-
-	@Override
-	public Discipline getDiscipline() {
-		return Discipline.ROGUE;
 	}
 
 }

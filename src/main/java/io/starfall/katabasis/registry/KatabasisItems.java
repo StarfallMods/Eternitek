@@ -2,7 +2,7 @@ package io.starfall.katabasis.registry;
 
 import io.starfall.katabasis.Katabasis;
 import io.starfall.katabasis.item.SeparatePerspective;
-import io.starfall.katabasis.item.mage.SoulTestItem;
+import io.starfall.katabasis.item.mage.TwistedQuarterstaffItem;
 import io.starfall.katabasis.item.melee.GlaiveItem;
 import io.starfall.katabasis.item.melee.MaceItem;
 import io.starfall.katabasis.item.rogue.HatchetItem;
@@ -29,7 +29,7 @@ public class KatabasisItems {
 	public static final Item KNIFE = new KnifeItem(ToolMaterials.NETHERITE, 2, -1.1F, new FabricItemSettings().maxCount(128));
 	public static final Item HATCHET = new HatchetItem(new FabricItemSettings());
 
-	public static final Item TEST_ITEM = new SoulTestItem(new FabricItemSettings().maxCount(1));
+	public static final Item TWISTED_QUARTERSTAFF = new TwistedQuarterstaffItem(new FabricItemSettings().maxCount(1), "twisted_quarterstaff_hand");
 
 	public static void register() {
 
@@ -40,7 +40,7 @@ public class KatabasisItems {
 		registerItem("knife", KNIFE);
 		registerItem("hatchet", HATCHET);
 
-		registerItem("test_item", TEST_ITEM);
+		registerItem("twisted_quarterstaff", TWISTED_QUARTERSTAFF);
 
 	}
 

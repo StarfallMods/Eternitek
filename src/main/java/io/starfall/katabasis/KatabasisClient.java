@@ -12,20 +12,14 @@ import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.model.loading.v1.ModelLoadingPlugin;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
-import net.fabricmc.fabric.impl.resource.loader.*;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.client.resource.DefaultClientResourcePackProvider;
-import net.minecraft.client.resource.server.ServerResourcePackLoader;
 import net.minecraft.client.util.ModelIdentifier;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.resource.ResourcePackProvider;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Environment(EnvType.CLIENT)
@@ -42,14 +36,18 @@ public class KatabasisClient implements ClientModInitializer {
 
 		ModelLoadingPlugin.register(KatabasisClient::registerHeldItemModels);
 
+		ResourceManagerHelper.registerBuiltinResourcePack(
+			Katabasis.id("texture_overhaul"),
+			Katabasis.getModContainer(),
+			ResourcePackActivationType.NORMAL
+		);
+
 	}
 
 	private static void appendDisciplineTooltip(ItemStack stack, TooltipContext context, List<Text> lines) {
-
 		if(stack.getItem() instanceof Disciplined item) {
 			lines.add(1, item.getDiscipline().getName());
 		}
-
 	}
 
 	private static void registerHeldItemModels(ModelLoadingPlugin.Context context) {

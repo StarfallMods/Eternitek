@@ -4,8 +4,9 @@
   "compatibilityLevel": "JAVA_19",
   "mixins": [
     "InventoryMixin",
-    "StatusEffectMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "PlayerEntityMixin",
+    "StatusEffectMixin"
   ],
   "client": [
     "ItemRendererMixin"

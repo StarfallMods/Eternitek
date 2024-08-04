@@ -8,10 +8,10 @@ import net.minecraft.registry.Registry;
 
 public class KatabasisAttributes {
 
-	public static final EntityAttribute MAGE_DAMAGE = createAttribute("mage_damage", 0.0, 0.0, 7.0);
-	public static final EntityAttribute MELEE_DAMAGE = createAttribute("melee_damage", 0.0, 0.0, 7.0);
-	public static final EntityAttribute RANGER_DAMAGE = createAttribute("ranger_damage", 0.0, 0.0, 7.0);
-	public static final EntityAttribute ROGUE_DAMAGE = createAttribute("rogue_damage", 0.0, 0.0, 7.0);
+	public static final EntityAttribute MAGE_DAMAGE = createAttribute("mage_damage", 0.0, 0.0, 7.0).setTracked(true);
+	public static final EntityAttribute MELEE_DAMAGE = createAttribute("melee_damage", 0.0, 0.0, 7.0).setTracked(true);
+	public static final EntityAttribute RANGER_DAMAGE = createAttribute("ranger_damage", 0.0, 0.0, 7.0).setTracked(true);
+	public static final EntityAttribute ROGUE_DAMAGE = createAttribute("rogue_damage", 0.0, 0.0, 7.0).setTracked(true);
 
 	public static void register() {
 

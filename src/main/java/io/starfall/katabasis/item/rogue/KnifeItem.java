@@ -14,17 +14,13 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class KnifeItem extends SwordItem implements Disciplined {
+public class KnifeItem extends BaseRogueItem {
 
 	public KnifeItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
 		super(toolMaterial, attackDamage, attackSpeed, settings);
 	}
 
 	@Override
-	public Discipline getDiscipline() {
-		return Discipline.ROGUE;
-	}
-
 	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 		ItemStack itemStack = user.getStackInHand(hand);
 		if (!world.isClient) {
@@ -40,8 +36,7 @@ public class KnifeItem extends SwordItem implements Disciplined {
 			world.playSoundFromEntity(null, entity, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, SoundCategory.NEUTRAL, 0.5F, 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
 
 			if (!user.getAbilities().creativeMode) {
-				int slotStack = user.getInventory().getSlotWithStack(itemStack);
-				user.getInventory().setStack(slotStack, itemStack.copyWithCount(itemStack.getCount() - 1));
+				itemStack.decrement(1);
 			}
 
 		}

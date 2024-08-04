@@ -4,13 +4,12 @@ import io.starfall.katabasis.registry.KatabasisAttributes;
 import io.starfall.katabasis.registry.KatabasisBlocks;
 import io.starfall.katabasis.registry.KatabasisItems;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.List;
+import team.lodestar.lodestone.registry.common.particle.LodestoneScreenParticleRegistry;
 
 public class Katabasis implements ModInitializer {
 
@@ -33,6 +32,10 @@ public class Katabasis implements ModInitializer {
 
 	public static Identifier id(String path) {
 		return new Identifier(ID, path);
+	}
+
+	public static ModContainer getModContainer() {
+		return FabricLoader.getInstance().getModContainer(Katabasis.ID).orElseThrow(() -> new IllegalStateException("Couldn't find a ModContainer for Katabasis"));
 	}
 
 }

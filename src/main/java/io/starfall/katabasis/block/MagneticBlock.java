@@ -19,11 +19,6 @@ public class MagneticBlock extends BlockWithEntity {
 		super(settings);
 	}
 
-	@Override
-	protected MapCodec<? extends BlockWithEntity> getCodec() {
-		return null;
-	}
-
 	@Nullable
 	@Override
 	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
@@ -33,6 +28,6 @@ public class MagneticBlock extends BlockWithEntity {
 	@Nullable
 	@Override
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-		return validateTicker(type, KatabasisEntityTypes.MAGNETIC_BLOCK, (world1, pos, state1, be) -> be.tick(world1, pos, state1, be));
+		return checkType(type, KatabasisEntityTypes.MAGNETIC_BLOCK, (world1, pos, state1, be) -> be.tick(world1, pos, state1, be));
 	}
 }
