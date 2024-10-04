@@ -16,10 +16,12 @@ repositories {
 	maven { url = 'https://maven.ladysnake.org/releases' }
 	// Reach Entity Attributes
 	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" }
-	// Trinkets
+	// Mod Menu
 	maven { url = "https://maven.terraformersmc.com/" }
 	// Lodestone
 	maven { url = "https://maven.blamejared.com/" }
+	// REI
+	maven { url "https://maven.shedaniel.me/" }
 
 	// No clue which is which :P
 	maven { url = "https://mvn.devos.one/releases/" }
@@ -38,25 +40,26 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	// Replace modImplementation with modApi if you expose components in your own API
-	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cca_version}"
-	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
-	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-item:${project.cca_version}"
-	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-world:${project.cca_version}"
+	modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cca_version}"
+	modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
+	modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-world:${project.cca_version}"
 
 	// JIJ Cardinal Components
-	include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cca_version}"
-	include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
-	include "dev.onyxstudios.cardinal-components-api:cardinal-components-item:${project.cca_version}"
-	include "dev.onyxstudios.cardinal-components-api:cardinal-components-world:${project.cca_version}"
+	include "org.ladysnake.cardinal-components-api:cardinal-components-base:${project.cca_version}"
+	include "org.ladysnake.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
+	include "org.ladysnake.cardinal-components-api:cardinal-components-world:${project.cca_version}"
 
-	modImplementation("dev.emi:trinkets:${project.trinkets_version}")
-	modImplementation("com.jamieswhiteshirt:reach-entity-attributes:${project.rea_version}")
+//	modRuntime("me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}")
+//	modRuntime("com.terraformersmc:modmenu:11.0.2")
 
-	for (String module in port_lib_modules.split(",")) {
-		modImplementation("io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version")
-	}
-
-	modImplementation("team.lodestar.lodestone:lodestone:${project.minecraft_version}-${project.lodestone_version}-fabric")
+//	modImplementation "dev.emi:trinkets:${project.trinkets_version}"
+//	modImplementation "com.jamieswhiteshirt:reach-entity-attributes:${project.rea_version}"
+//
+//	for (String module in port_lib_modules.split(",")) {
+//		modImplementation "io.github.fabricators_of_create.Porting-Lib:$module:$port_lib_version"
+//	}
+//
+//	modImplementation "team.lodestar.lodestone:lodestone:${project.minecraft_version}-${project.lodestone_version}-fabric"
 
 }
 
@@ -64,7 +67,7 @@ loom {
 //    splitEnvironmentSourceSets()
 
 	mods {
-		"katabasis" {
+		"eternitek" {
 			sourceSet sourceSets.main
 		}
 	}
@@ -80,7 +83,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 19
+	it.options.release = 21
 }
 
 java {
@@ -89,8 +92,8 @@ java {
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_19
-	targetCompatibility = JavaVersion.VERSION_19
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {

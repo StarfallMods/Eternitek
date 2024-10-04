@@ -1,47 +1,37 @@
 {
 	"schemaVersion": 1,
-	"id": "katabasis",
+	"id": "eternitek",
 	"version": "${version}",
-	"name": "Katabasis",
-	"description": "A general overhaul of Minecraft mechanics!",
+	"name": "Eternitek",
+	"description": "A dance of magic and science.",
 	"authors": [
-		"Mercury",
-		"Toad",
-		"Avery",
-		"Zarkanaseen",
-		"YBOUZL"
+		"Mercury"
 	],
 	"contact": {
-		"homepage": "https://starfall.io",
-		"issues": "https://github.com/StarfallMods/Katabasis/issues",
-		"sources": "https://github.com/StarfallMods/Katabasis"
+		"issues": "https://github.com/StarfallMods/Eternitek/issues",
+		"sources": "https://github.com/StarfallMods/Eternitek"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/katabasis/icon.png",
+	"license": "GPL-3.0-or-later",
+	"icon": "assets/eternitek/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"io.starfall.katabasis.Katabasis"
+			"io.starfall.eternitek.Eternitek"
 		],
 		"client": [
-			"io.starfall.katabasis.KatabasisClient"
-		],
-		"cardinal-components": [
-			"io.starfall.katabasis.registry.KatabasisComponents"
+			"io.starfall.eternitek.EternitekClient"
 		]
 	},
 	"mixins": [
-		"katabasis.mixins.json"
+      "eternitek.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.20.1",
-		"java": ">=19",
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
 		"fabric-api": "*"
 	},
 	"custom": {
-		"cardinal-components": [
-			"katabasis:soul"
-		]
+		"cardinal-components": []
 	}
 }
